@@ -8,9 +8,9 @@ faceClassifier = cv2.CascadeClassifier(xml_haar_cascade)
 
 counter = 1
 
-while not cv2.waitKey(20) & 0xFF == ord("q"):
+capture = cv2.VideoCapture(-1)
 
-    capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+while not cv2.waitKey(20) & 0xFF == ord("q"):
 
     capture.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 
@@ -24,7 +24,7 @@ while not cv2.waitKey(20) & 0xFF == ord("q"):
     for x, y, w, h in faces:
         cv2.rectangle(frame_color, (x, y), (x + w, y + h), (0, 0, 255), 2)
         faces_counter += 1
-    cv2.imwrite("./frame%d.jpg" % counter, frame_color)
+    cv2.imwrite("./teste2/2faces/teste3/frame%d.jpg" % counter, frame_color)
     counter += 1
 
     #cv2.imshow('color', frame_color)
